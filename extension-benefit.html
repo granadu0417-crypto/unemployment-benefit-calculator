@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실업급여 연장급여 - 훈련연장, 개별연장, 조기재취업수당</title>
+    <meta name="description" content="실업급여 연장급여 안내. 훈련연장급여, 개별연장급여, 특별연장급여, 조기재취업수당 총정리.">
+    <meta name="keywords" content="연장급여, 훈련연장급여, 조기재취업수당, 실업급여 연장">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 3px solid #667eea;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        nav a:hover, nav a.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .benefit-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+        }
+
+        .benefit-box h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .benefit-box h4 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-box p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .benefit-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .benefit-box li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .success-box {
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+
+        .success-box h4 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+
+        .success-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .success-box li {
+            color: #155724;
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+
+        .warning-box h4 {
+            color: #f57c00;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💼 실업급여 계산기</h1>
+            <p class="subtitle">2025년 최신 기준으로 정확하게 계산하세요</p>
+        </header>
+
+        <nav>
+            <a href="index.html">실업급여 계산</a>
+            <a href="eligibility.html">수급자격 확인</a>
+            <a href="application-guide.html">신청방법</a>
+            <a href="extension-benefit.html" class="active">연장급여</a>
+            <a href="unemployment-guide.html">급여 가이드</a>
+        </nav>
+
+        <div class="content">
+            <h2>실업급여 연장 및 추가 지원</h2>
+            <p style="color: #666; margin: 20px 0;">소정급여일수 종료 후에도 받을 수 있는 연장급여와 조기재취업 시 받는 수당을 안내합니다.</p>
+
+            <div class="benefit-box">
+                <h3>1️⃣ 훈련연장급여</h3>
+                <p><strong>직업능력개발 훈련을 받는 경우</strong> 구직급여를 연장 지급받을 수 있습니다.</p>
+                
+                <h4>📚 지급 대상</h4>
+                <ul>
+                    <li>고용센터장이 지시한 직업능력개발 훈련 수강자</li>
+                    <li>훈련을 시작한 날에 소정급여일수가 1/2 이상 남아있는 경우</li>
+                </ul>
+
+                <h4>💰 지급 내용</h4>
+                <ul>
+                    <li><strong>지급액:</strong> 기존 실업급여와 동일한 금액</li>
+                    <li><strong>지급기간:</strong> 훈련 기간 동안 (최대 2년)</li>
+                    <li><strong>훈련수당:</strong> 월 최대 316,000원 추가 지급</li>
+                </ul>
+
+                <h4>📋 신청 방법</h4>
+                <ul>
+                    <li>고용센터 직업훈련 상담</li>
+                    <li>훈련과정 선택 및 수강 신청</li>
+                    <li>훈련연장급여 신청서 제출</li>
+                </ul>
+            </div>
+
+            <div class="benefit-box">
+                <h3>2️⃣ 개별연장급여</h3>
+                <p><strong>취업이 특히 곤란한 경우</strong> 소정급여일수 종료 후 60일 추가 지급받을 수 있습니다.</p>
+                
+                <h4>✅ 지급 대상 (아래 중 하나 해당 시)</h4>
+                <ul>
+                    <li>장애인 (장애인고용촉진법상 장애인)</li>
+                    <li>일용근로자로 180일 이상 근무 후 이직</li>
+                    <li>중증질환자 (암, 희귀난치성질환 등)</li>
+                    <li>60세 이상인 자</li>
+                    <li>임신 중이거나 출산 후 40일 미경과자</li>
+                </ul>
+
+                <h4>💰 지급 내용</h4>
+                <ul>
+                    <li><strong>지급액:</strong> 기존 실업급여와 동일</li>
+                    <li><strong>지급기간:</strong> 60일</li>
+                    <li><strong>신청시기:</strong> 소정급여일수 종료 전 신청</li>
+                </ul>
+            </div>
+
+            <div class="benefit-box">
+                <h3>3️⃣ 특별연장급여</h3>
+                <p><strong>경제 상황 악화</strong>로 고용상황이 급격히 나빠진 경우 정부 결정으로 지급합니다.</p>
+                
+                <h4>📊 지급 조건</h4>
+                <ul>
+                    <li>고용노동부 장관이 대통령령으로 정하는 경우에만 지급</li>
+                    <li>경기침체, 대량실업 등 특수 상황</li>
+                    <li>2025년 10월 현재 시행되지 않음</li>
+                </ul>
+
+                <h4>💰 지급 내용</h4>
+                <ul>
+                    <li><strong>지급기간:</strong> 정부 결정에 따라 상이 (과거 60일~120일)</li>
+                    <li><strong>지급액:</strong> 기존 실업급여와 동일</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <h4>💼 조기재취업수당</h4>
+                <p>소정급여일수의 <strong>1/2 이상 남은 상태</strong>에서 안정적인 직장에 재취업하면 받을 수 있는 수당입니다.</p>
+                
+                <p style="margin-top: 15px;"><strong>✅ 지급 요건</strong></p>
+                <ul>
+                    <li>소정급여일수 1/2 이상 남은 상태에서 재취업</li>
+                    <li>재취업한 회사에서 12개월 이상 계속 고용</li>
+                    <li>고용보험 피보험자로 가입</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>💰 지급액 계산</strong></p>
+                <p style="margin-left: 20px; color: #155724;">
+                    <strong>남은 소정급여일수의 1/2</strong> × <strong>1일 실업급여액</strong><br>
+                    <small style="color: #666;">예) 소정급여일수 210일 중 120일 남은 상태에서 재취업 시<br>
+                    → 120일 × 1/2 = 60일분 지급</small>
+                </p>
+
+                <p style="margin-top: 15px;"><strong>📋 신청 방법</strong></p>
+                <ul>
+                    <li>재취업 후 12개월 계속 근무 확인</li>
+                    <li>고용센터 또는 고용24에서 신청</li>
+                    <li>신청기한: 재취업일부터 12개월 경과 후 3개월 이내</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📊 연장급여 비교표</h4>
+                <table style="width: 100%; margin-top: 15px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #bbdefb;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">구분</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">기간</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">대상</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">훈련연장</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">최대 2년</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">직업훈련 수강자</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">개별연장</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">60일</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">장애인, 고령자 등</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">특별연장</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">정부 결정</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">경기침체 시</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ 유의사항</h4>
+                <p>• 연장급여는 신청 기한이 정해져 있으니 미리 확인하세요</p>
+                <p>• 조기재취업수당은 12개월 계속 근무가 확인되어야 지급됩니다</p>
+                <p>• 부정수급 적발 시 수급액 환수 및 추가 제재가 있습니다</p>
+                <p>• 상세한 내용은 고용센터(1350)에 문의하세요</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

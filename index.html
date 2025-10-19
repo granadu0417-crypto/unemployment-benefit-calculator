@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실업급여 계산기 - 2025년 구직급여 자동 계산</title>
+    <meta name="description" content="2025년 최신 실업급여(구직급여) 계산기. 일일 수급액, 총 수급액 자동 계산. 소정급여일수 확인.">
+    <meta name="keywords" content="실업급여, 구직급여, 실업급여 계산기, 실업급여 금액, 고용보험">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 3px solid #667eea;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        nav a:hover, nav a.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .calculator {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .result {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 3px solid #667eea;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+            background: #f0f7ff;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+
+        .result-label {
+            color: #666;
+        }
+
+        .result-value {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+            margin-top: 30px;
+        }
+
+        .info-box h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+
+        .info-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .info-box th, .info-box td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .info-box th {
+            background: #bbdefb;
+            font-weight: 600;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+            margin-top: 20px;
+        }
+
+        .warning-box h4 {
+            color: #f57c00;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+            .info-box table {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💼 실업급여 계산기</h1>
+            <p class="subtitle">2025년 최신 기준으로 정확하게 계산하세요</p>
+        </header>
+
+        <nav>
+            <a href="index.html" class="active">실업급여 계산</a>
+            <a href="eligibility.html">수급자격 확인</a>
+            <a href="application-guide.html">신청방법</a>
+            <a href="extension-benefit.html">연장급여</a>
+            <a href="unemployment-guide.html">급여 가이드</a>
+        </nav>
+
+        <div class="content">
+            <h2>실업급여(구직급여) 계산기</h2>
+            <p style="color: #666; margin: 20px 0;">퇴직 전 평균임금으로 실업급여 수급액을 계산합니다.</p>
+
+            <div class="calculator">
+                <div class="form-group">
+                    <label>퇴직 전 3개월 평균 월급 (원)</label>
+                    <input type="number" id="avgSalary" placeholder="예: 3000000">
+                    <small style="color: #666; display: block; margin-top: 8px;">
+                        * 세전 기본급 + 고정수당 (상여금, 성과급 제외)
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>연령대</label>
+                    <select id="ageGroup">
+                        <option value="under30">30세 미만</option>
+                        <option value="30to49">30세 이상 ~ 50세 미만</option>
+                        <option value="50plus">50세 이상 및 장애인</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>고용보험 가입기간</label>
+                    <select id="insurancePeriod">
+                        <option value="1">1년 미만</option>
+                        <option value="2">1년 이상 ~ 3년 미만</option>
+                        <option value="3">3년 이상 ~ 5년 미만</option>
+                        <option value="4">5년 이상 ~ 10년 미만</option>
+                        <option value="5">10년 이상</option>
+                    </select>
+                </div>
+
+                <button onclick="calculate()">실업급여 계산하기</button>
+            </div>
+
+            <div class="result" id="result">
+                <h3 style="margin-bottom: 20px; color: #667eea;">계산 결과</h3>
+                <div class="result-item">
+                    <span class="result-label">퇴직 전 평균임금 (일)</span>
+                    <span class="result-value" id="resultDailyWage">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">실업급여 지급률</span>
+                    <span class="result-value">60%</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">1일 수급액</span>
+                    <span class="result-value" id="resultDailyBenefit">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">소정급여일수</span>
+                    <span class="result-value" id="resultBenefitDays">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">예상 총 수급액</span>
+                    <span class="result-value" id="resultTotal">-</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>2025년 소정급여일수 (단위: 일)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">가입기간</th>
+                            <th colspan="3">연령</th>
+                        </tr>
+                        <tr>
+                            <th>30세 미만</th>
+                            <th>30~49세</th>
+                            <th>50세 이상<br>장애인</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1년 미만</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>120</td>
+                        </tr>
+                        <tr>
+                            <td>1년~3년 미만</td>
+                            <td>150</td>
+                            <td>180</td>
+                            <td>180</td>
+                        </tr>
+                        <tr>
+                            <td>3년~5년 미만</td>
+                            <td>180</td>
+                            <td>210</td>
+                            <td>210</td>
+                        </tr>
+                        <tr>
+                            <td>5년~10년 미만</td>
+                            <td>210</td>
+                            <td>240</td>
+                            <td>240</td>
+                        </tr>
+                        <tr>
+                            <td>10년 이상</td>
+                            <td>240</td>
+                            <td>240</td>
+                            <td>270</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <h3>2025년 실업급여 한도</h3>
+                <p style="color: #555;">
+                    • <strong>상한액:</strong> 66,000원/일<br>
+                    • <strong>하한액:</strong> 64,192원/일 (최저임금의 80%)<br>
+                    • <strong>지급률:</strong> 퇴직 전 평균임금의 60%
+                </p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ 유의사항</h4>
+                <p>• 실제 수급액은 구직급여 신청 후 고용센터에서 확정됩니다</p>
+                <p>• 재취업 시 미지급 급여는 소멸됩니다</p>
+                <p>• 부정수급 적발 시 수급액 환수 및 추가 제재가 있습니다</p>
+                <p>• 정확한 금액은 고용센터(1350)에 문의하세요</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formatNumber(num) {
+            return new Intl.NumberFormat('ko-KR').format(num);
+        }
+
+        function getBenefitDays(ageGroup, insurancePeriod) {
+            const table = {
+                'under30': [120, 150, 180, 210, 240],
+                '30to49': [120, 180, 210, 240, 240],
+                '50plus': [120, 180, 210, 240, 270]
+            };
+            return table[ageGroup][parseInt(insurancePeriod) - 1];
+        }
+
+        function calculate() {
+            const avgSalary = parseInt(document.getElementById('avgSalary').value);
+            const ageGroup = document.getElementById('ageGroup').value;
+            const insurancePeriod = document.getElementById('insurancePeriod').value;
+
+            if (!avgSalary || avgSalary <= 0) {
+                alert('평균 월급을 올바르게 입력해주세요.');
+                return;
+            }
+
+            // 일 평균임금 = 월급 / 30
+            const dailyWage = Math.floor(avgSalary / 30);
+
+            // 1일 수급액 = 일 평균임금 × 60%
+            let dailyBenefit = Math.floor(dailyWage * 0.6);
+
+            // 상한액 및 하한액 적용 (2025년 기준)
+            const maxDailyBenefit = 66000; // 상한액
+            const minDailyBenefit = 64192; // 하한액 (최저임금 10,030원 × 8시간 × 80%)
+
+            if (dailyBenefit > maxDailyBenefit) {
+                dailyBenefit = maxDailyBenefit;
+            } else if (dailyBenefit < minDailyBenefit) {
+                dailyBenefit = minDailyBenefit;
+            }
+
+            // 소정급여일수
+            const benefitDays = getBenefitDays(ageGroup, insurancePeriod);
+
+            // 총 수급액
+            const totalBenefit = dailyBenefit * benefitDays;
+
+            // 결과 표시
+            document.getElementById('resultDailyWage').textContent = formatNumber(dailyWage) + '원';
+            document.getElementById('resultDailyBenefit').textContent = formatNumber(dailyBenefit) + '원';
+            document.getElementById('resultBenefitDays').textContent = benefitDays + '일 (약 ' + Math.floor(benefitDays / 30) + '개월)';
+            document.getElementById('resultTotal').textContent = formatNumber(totalBenefit) + '원';
+
+            document.getElementById('result').classList.add('show');
+        }
+    </script>
+</body>
+</html>

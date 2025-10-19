@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실업급여 신청방법 - 단계별 신청 가이드</title>
+    <meta name="description" content="실업급여 신청 절차, 필요서류, 온라인 신청방법 완벽 가이드. 고용센터 방문 없이 온라인으로 신청.">
+    <meta name="keywords" content="실업급여 신청, 구직급여 신청방법, 워크넷, 고용센터, 필요서류">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 3px solid #667eea;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        nav a:hover, nav a.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .step {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+
+        .step h3 {
+            display: inline-block;
+            color: #667eea;
+            margin-bottom: 15px;
+            vertical-align: middle;
+        }
+
+        .step p {
+            color: #555;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        .step ul {
+            margin-left: 55px;
+            margin-top: 10px;
+        }
+
+        .step li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .info-box li {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .success-box {
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+
+        .success-box h4 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+
+        .warning-box h4 {
+            color: #f57c00;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+            .step ul {
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💼 실업급여 계산기</h1>
+            <p class="subtitle">2025년 최신 기준으로 정확하게 계산하세요</p>
+        </header>
+
+        <nav>
+            <a href="index.html">실업급여 계산</a>
+            <a href="eligibility.html">수급자격 확인</a>
+            <a href="application-guide.html" class="active">신청방법</a>
+            <a href="extension-benefit.html">연장급여</a>
+            <a href="unemployment-guide.html">급여 가이드</a>
+        </nav>
+
+        <div class="content">
+            <h2>실업급여 신청방법</h2>
+            <p style="color: #666; margin: 20px 0;">단계별로 따라하면 쉽게 신청할 수 있습니다.</p>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>이직확인서 제출 확인</h3>
+                <p>퇴사한 회사에서 <strong>이직일로부터 14일 이내</strong>에 이직확인서를 고용센터에 제출해야 합니다.</p>
+                <ul>
+                    <li>회사가 자동으로 제출 (근로자가 직접 제출할 필요 없음)</li>
+                    <li>미제출 시 회사에 독촉 또는 본인이 직접 제출 가능</li>
+                    <li>고용24 또는 고용센터에서 제출 여부 확인 가능</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>워크넷 구직등록</h3>
+                <p><strong>워크넷(www.work.go.kr)</strong>에 구직 신청을 합니다.</p>
+                <ul>
+                    <li>회원가입 후 로그인</li>
+                    <li>개인서비스 → 구직신청</li>
+                    <li>이력서 작성 및 희망 직종 등록</li>
+                    <li>구직등록증 출력 (고용센터 방문 시 필요)</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>수급자격 신청</h3>
+                <p>거주지 관할 <strong>고용센터 방문</strong> 또는 <strong>온라인 신청</strong></p>
+                <p style="margin-top: 15px; font-weight: 600;">📍 고용센터 방문 신청</p>
+                <ul>
+                    <li>필요서류 지참하여 고용센터 방문</li>
+                    <li>수급자격 신청서 작성</li>
+                    <li>구직급여 수급자격 인정 교육 수강 (약 1시간)</li>
+                    <li>실업급여 수급자격 인정 (심사 후 결정)</li>
+                </ul>
+                <p style="margin-top: 15px; font-weight: 600;">💻 온라인 신청 (고용24)</p>
+                <ul>
+                    <li>고용24(www.ei.go.kr) 접속</li>
+                    <li>개인 로그인 → 실업급여 → 수급자격 신청</li>
+                    <li>온라인 교육 수강 (약 1시간)</li>
+                    <li>서류 업로드 (신분증, 통장사본 등)</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <h3>첫 실업인정</h3>
+                <p>수급자격 신청 후 <strong>1~2주 후</strong> 첫 실업인정일 지정</p>
+                <ul>
+                    <li>실업인정일에 고용센터 방문 또는 온라인 인정</li>
+                    <li>구직활동 내역 제출 (최소 1회 이상)</li>
+                    <li>실업 상태 확인 및 인정</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <h3>4주마다 실업인정 반복</h3>
+                <p><strong>4주마다</strong> 실업인정을 받아야 구직급여를 계속 수령할 수 있습니다.</p>
+                <ul>
+                    <li>재취업 활동 최소 1회 이상 필수</li>
+                    <li>워크넷 구인정보 열람, 입사지원, 직업상담 등</li>
+                    <li>실업인정일 불참 시 해당 기간 급여 미지급</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">6</span>
+                <h3>구직급여 수령</h3>
+                <p>실업인정일로부터 <strong>2~3일 후</strong> 등록된 계좌로 입금</p>
+                <ul>
+                    <li>4주분 급여 일괄 지급</li>
+                    <li>재취업 시 남은 급여 소멸 (조기재취업수당 신청 가능)</li>
+                    <li>소정급여일수 소진 시 자동 종료</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📋 필요 서류</h4>
+                <ul>
+                    <li><strong>신분증:</strong> 주민등록증, 운전면허증, 여권 등</li>
+                    <li><strong>이직확인서:</strong> 회사에서 고용센터로 제출 (본인 제출 불필요)</li>
+                    <li><strong>구직신청서:</strong> 워크넷에서 구직등록 후 출력</li>
+                    <li><strong>통장사본:</strong> 본인 명의 통장</li>
+                    <li><strong>증명사진:</strong> 3×4cm 컬러사진 2매 (일부 센터)</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <h4>✅ 온라인 실업인정 (고용24)</h4>
+                <p>• 첫 실업인정 후 2회차부터 온라인 가능</p>
+                <p>• 고용센터 방문 없이 PC, 모바일로 인정</p>
+                <p>• 구직활동 내역 온라인 제출</p>
+                <p>• 실업인정일 전날까지 신청 가능</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ 주의사항</h4>
+                <p>• 이직 후 <strong>12개월 이내</strong> 신청해야 합니다</p>
+                <p>• 수급자격 신청은 이직일로부터 빠를수록 유리 (대기기간 7일 포함)</p>
+                <p>• 실업인정일 불참 시 해당 기간 급여 미지급</p>
+                <p>• 부정수급 적발 시 수급액 환수 및 추가 제재</p>
+            </div>
+
+            <div class="info-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">
+                <h4 style="color: white;">📞 고용센터 찾기</h4>
+                <p style="color: white; margin-top: 10px;">
+                    • <strong>고용노동부 고용센터 찾기:</strong> www.work.go.kr<br>
+                    • <strong>고용센터 전화:</strong> 1350 (평일 09:00~18:00)<br>
+                    • <strong>거주지 관할 센터:</strong> 주소지 기준 가까운 센터 방문
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
