@@ -48,14 +48,14 @@ function injectOGTags(html, ogData) {
     <meta property="og:type" content="website">
     <meta property="og:title" content="${escapeHtml(ogData.title)}">
     <meta property="og:description" content="${escapeHtml(ogData.description)}">
-    <meta property="og:url" content="https://unemployment-calculator-9es.pages.dev/">
+    <meta property="og:url" content="https://unemployment-benefit-calculator.pages.dev/">
     <meta property="og:site_name" content="실업급여 계산기">
-    <meta property="og:image" content="https://unemployment-calculator-9es.pages.dev/og-image.jpg">
+    <meta property="og:image" content="https://unemployment-benefit-calculator.pages.dev/og-image.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(ogData.title)}">
     <meta name="twitter:description" content="${escapeHtml(ogData.description)}">
-    <meta name="twitter:image" content="https://unemployment-calculator-9es.pages.dev/og-image.jpg">
+    <meta name="twitter:image" content="https://unemployment-benefit-calculator.pages.dev/og-image.jpg">
   `;
 
   modifiedHtml = modifiedHtml.replace('</head>', `${ogTags}\n</head>`);
